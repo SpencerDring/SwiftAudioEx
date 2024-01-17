@@ -51,16 +51,19 @@ public class DefaultAudioItem: AudioItem {
     public var title: String?
     
     public var albumTitle: String?
+
+    public var songObject: MusicSong?
     
     public var sourceType: SourceType
     
     public var artwork: UIImage?
     
-    public init(audioUrl: String, artist: String? = nil, title: String? = nil, albumTitle: String? = nil, sourceType: SourceType, artwork: UIImage? = nil) {
+    public init(audioUrl: String, artist: String? = nil, title: String? = nil, albumTitle: String? = nil, songObject: MusicSong? = nil, sourceType: SourceType, artwork: UIImage? = nil) {
         self.audioUrl = audioUrl
         self.artist = artist
         self.title = title
         self.albumTitle = albumTitle
+        self.songObject = songObject
         self.sourceType = sourceType
         self.artwork = artwork
     }
@@ -79,6 +82,10 @@ public class DefaultAudioItem: AudioItem {
     
     public func getAlbumTitle() -> String? {
         albumTitle
+    }
+
+     public func getSongObject() -> MusicSong? {
+        songObject
     }
     
     public func getSourceType() -> SourceType {
